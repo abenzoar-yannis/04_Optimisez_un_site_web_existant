@@ -6,68 +6,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.flex-center {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.img-responsive {
-    width: 100%;
-}
-.text-format {
-    position: relative;
-    text-align: center;
-    font-size: 16px;
-    font-weight: normal;
-}
-.col-sm-12 {
-    width: 100%;
-}
-.collapse * {
-    list-style-type: none;
-    padding-left: 0;
-}
-form {
-    max-width: 460px;
-    margin-right: 32px;
-    margin-left: 32px;
-    display: flex;
-    flex-direction: column;
-}
-form-group {
-    width: 100%;
-}
-input {
-    height: 24px;
-    width: 100%;
-    margin-bottom: 16px;
-}
-textarea {
-    width: 100%;
-}
-.form-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.col-sm-6 p {
-    font-size: 16px;
-}
-.bloc-center {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.text-présentation {
-    max-width: 600px;
-    font-size: 21px;
-    margin: 21px 30px;
-    color: #333333;
-}
-.lighter {
-    background-color: #eeeeee;
-}
+.tc-white
 a,
 button {
     transition: all .3s ease-in-out;
@@ -92,8 +31,7 @@ a:hover {
     width: 100%;
     clear: both;
     background: 50% 50% no-repeat;
-    padding: 0;
-    /* padding: 0 50px; */
+    padding: 0 50px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -388,12 +326,6 @@ a:hover {
     float: left;
     margin-top: 4px;
     font-size: 16px;
-    padding-right: 64px;
-}
-.nav-pos {
-    margin: 0;
-    right: 150px;
-    padding-right: 64px;
 }
 
 .navbar-nav .open .dropdown-menu > li > a {
@@ -723,7 +655,7 @@ a {
 }
 
 .container {
-    max-width: 100%;
+    max-width: 1000px;
 }
 
 .hero-bloc-text {
@@ -743,9 +675,12 @@ a {
     max-width: 520px;
     margin: auto auto auto auto;
 }
-
+/* Correction : Changer la taille des paragraphe de 11 à 14px
 p {
     font-size: 11px;
+} */
+p {
+    font-size: 14px;
 }
 
 .tight-width-whitespace {
@@ -777,7 +712,6 @@ h2 {
     line-height: 1.4em;
 }
 
-/* h2, */
 h3 {
     font-size: 15px;
     text-transform: uppercase;
@@ -843,8 +777,17 @@ h4 {
     background-color: #F3976C;
 }
 
+/* Correction : Changer la couleur de la class .tc-white pour du blanc
 .tc-white {
     color: #F3976C!important;
+} */
+.tc-white {
+    color: #FFFFFF!important;
+}
+
+/* Correction : Replacer le titre par dessus le filtre */
+.pos-relative {
+    position: relative;
 }
 
 .btn-atomic-tangerine {
@@ -886,12 +829,20 @@ h4 {
     background-image: url("img/lines-h2-bg.png");
 }
 
+/* Correction : Ajustement de la taille des images
 .bg-banniere {
     background-image: url("img/agence-la-panthere.jpg");
+} */
+.bg-banniere {
+    background-image: url("img-redimension/agence-la-panthere.jpg");
 }
 
+/* Correction : Ajustement de la taille des images
 .bg-presentation {
-    background-image: url("img/image-de-presentation.jpg");
+    background-image: url("img/image-de-presentation.bmp");
+} */
+.bg-presentation {
+    background-image: url("img-redimension/image-de-presentation.jpg");
 }
 
 @media (max-width: 1024px) {
@@ -917,14 +868,13 @@ h4 {
     }
 }
 
-/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) { */
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
     .b-parallax {
         background-attachment: scroll;
     }
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
     .b-parallax {
         background-attachment: scroll;
     }
@@ -942,6 +892,10 @@ h4 {
         overflow-x: hidden;
         position: relative;
     }
+    .bloc {
+        padding-left: constant(safe-area-inset-left);
+        padding-right: constant(safe-area-inset-right);
+    }
     .bloc-group,
     .bloc-group .bloc {
         display: block;
@@ -950,6 +904,8 @@ h4 {
     .bloc-fill-screen .fill-bloc-top-edge,
     .bloc-fill-screen .fill-bloc-bottom-edge {
         padding: 0 20px;
+        padding-left: constant(safe-area-inset-left);
+        padding-right: constant(safe-area-inset-right);
     }
 }
 
@@ -1089,6 +1045,12 @@ h4 {
     .blocsapp-device-iphone5 img {
         width: 180px;
         height: 320px;
+    }
+    
+    /* Correction : Rendre les images responsive
+    .img-responsive {} */
+    .img-responsive {
+        width: 100%;
     }
 }
 
